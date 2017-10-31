@@ -86,4 +86,8 @@ public class MainActivity extends AppCompatActivity {
         }
         DemoDBManager.getInstance().saveContacList(userList);
     }
+
+    public void clearSQL(View view) {
+        DemoDBManager.getInstance().clearSQL();
+    }
 }

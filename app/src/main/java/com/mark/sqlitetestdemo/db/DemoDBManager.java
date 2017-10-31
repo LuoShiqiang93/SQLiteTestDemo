@@ -147,6 +147,16 @@ public class DemoDBManager {
         }
     }
 
+    /**
+     *
+     * */
+    public synchronized void clearSQL() {
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        if (db.isOpen()) {
+            db.delete(UseDao.TABLE_NAME, null, null);
+        }
+    }
+
     public synchronized void closeDb() {
         if (dbHelper != null) {
             dbHelper.closeDB();
